@@ -43,19 +43,19 @@ class Ball {
     if ((this.x + this.size) >= width) {
       this.velX = -(this.velX);
     }
-  
+
     if ((this.x - this.size) <= 0) {
       this.velX = -(this.velX);
     }
-  
+
     if ((this.y + this.size) >= height) {
       this.velY = -(this.velY);
     }
-  
+
     if ((this.y - this.size) <= 0) {
       this.velY = -(this.velY);
     }
-  
+
     // Adds x/y veloctiy to x/y position to move ball at constant speed. 
     this.x += this.velX;
     this.y += this.velY;
@@ -71,7 +71,7 @@ class Ball {
         const dx = this.x - ball.x;
         const dy = this.y - ball.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
-  
+
         // If so, randomize ball colour.
         if (distance < this.size + ball.size) {
           ball.color = this.color = randomRGB();
@@ -92,7 +92,7 @@ const balls = []; // array of balls.
 
 // Creates 25 balls with randomized positions, velocities, sizes and colours.
 while (balls.length < 25) {
-  const size = random(10, 20); 
+  const size = random(10, 20);
   const ball = new Ball(
     // ball position always drawn at least one ball width
     // away from the edge of the canvas, to avoid drawing errors
